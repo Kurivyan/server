@@ -1,0 +1,9 @@
+{
+    "C_Cpp.default.compilerPath": "/usr/bin/gcc",
+    "files.associations": {
+        "types.h": "c",
+        "ioctl.h": "c",
+        "in.h": "c",
+        "stdlib.h": "c"
+    }
+}
