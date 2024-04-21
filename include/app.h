@@ -1,3 +1,4 @@
+#pragma once
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -15,4 +16,6 @@ int app_listen(int port);
 
 void app_accept_connections();
 
-void app_work();
+void app_work(int);
+
+void app_routing(struct req_body *);

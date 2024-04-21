@@ -5,5 +5,12 @@
         "ioctl.h": "c",
         "in.h": "c",
         "stdlib.h": "c"
-    }
+    },
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/kurivyan/.file_system/server/bin",
+            "binaryPath": "/home/kurivyan/.file_system/server/bin/server",
+            "binaryArgs": []
+        }
+    ]
 }
