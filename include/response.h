@@ -31,3 +31,5 @@ void home_page_render(int, char *);
 void not_found_page_render(int, char *);
 
 void fav_send(int);
+
+void img_send(int);

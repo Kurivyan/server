@@ -23,6 +23,11 @@ void app_routing(struct req_body *req, int client)
         fav_send(client);
         return;
     }
+    if (!strcmp(req->uri, "/img.png"))
+    {
+        img_send(client);
+        return;
+    }
     not_found_page_render(client, req_file);
     printf("%s %s\n", req->method, req->uri);
 }

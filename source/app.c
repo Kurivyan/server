@@ -64,9 +64,7 @@ void app_work(int client)
     req_buff = calloc(4096, sizeof(char));
 
     recv(client, req_buff, 4096, 0);
-    // printf("%s", req_buff);
     struct req_body req;
-    // printf("%s\n", req_buff);
     app_requiest_handle(req_buff, &req);
 
     app_routing(&req, client);
