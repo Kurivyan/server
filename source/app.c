@@ -1,6 +1,7 @@
 #include "app.h"
 #include "url_parser.h"
-#include "res_creator.h"
+#include "response.h"
+#include "routing.h"
 
 #define MAX_CLIENTS 5
 
@@ -63,13 +64,19 @@ void app_work(int client)
     req_buff = calloc(4096, sizeof(char));
 
     recv(client, req_buff, 4096, 0);
+    // printf("%s", req_buff);
     struct req_body req;
+    // printf("%s\n", req_buff);
     app_requiest_handle(req_buff, &req);
 
-    app_routing(&req);
+    app_routing(&req, client);
+    free(req.method);
+    free(req.uri);
+    for (int i = 0; req.params[i] != NULL; i++)
+    {
+        free(req.params[i][0]);
+        free(req.params[i][1]);
+    }
+    free(req.params);
     return;
-}
-
-void app_routing(struct req_body* req){
-    
 }

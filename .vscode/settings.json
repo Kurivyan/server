@@ -4,7 +4,20 @@
         "types.h": "c",
         "ioctl.h": "c",
         "in.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "string.h": "c",
+        "stdio.h": "c",
+        "errno.h": "c",
+        "response.h": "c",
+        "socket.h": "c",
+        "signal.h": "c",
+        "url_parser.h": "c",
+        "array": "c",
+        "buffer": "c",
+        "socket": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "utility": "c"
     },
     "makefile.launchConfigurations": [
         {

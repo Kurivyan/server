@@ -17,5 +17,3 @@ int app_listen(int port);
 void app_accept_connections();
 
 void app_work(int);
-
-void app_routing(struct req_body *);

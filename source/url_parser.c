@@ -17,18 +17,18 @@ void url_uri_parse(char *str, struct req_body *trg)
 {
     trg->uri = (char *)calloc(100, sizeof(char));
     sscanf(str, "%*s %s", trg->uri);
-    char *param_start = strchr(trg->uri, '?');
-    if (param_start != NULL)
-    {
-        *param_start = '\0';
-    }
 }
 
 void url_params_parse(char *str, struct req_body *trg)
 {
-    char *param_start = strchr(str, '?');
+    char *param_start = strchr(trg->uri, '?');
     if (param_start != NULL)
     {
+        char temp[100];
+        strcpy(temp, trg->uri);
+        *param_start = '\0';
+        param_start = strchr(temp, '?');
+
         trg->params = (char ***)malloc(10 * sizeof(char **));
         int param_count = 0;
         char *token = strtok(param_start + 1, "&");
