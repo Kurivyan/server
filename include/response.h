@@ -12,7 +12,6 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 
-#define DIRNAME "../src/"
 #define HEADER_PRESIZE 200
 #define STATIC_SRC "src/"
 

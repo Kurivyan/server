@@ -4,6 +4,7 @@
 void app_routing(struct req_body *req, int client)
 {
     char *req_file = NULL;
+
     if (strlen(req->uri) > 1)
     {
         char *path = strrchr(req->uri, '/');

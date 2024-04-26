@@ -47,7 +47,12 @@ void app_accept_connections()
         int cnt_sck = accept(srv_sck, 0, 0);
         if (cnt_sck == -1)
             continue;
-        if (!fork())
+        pid_t pid = fork();
+        if (pid == -1)
+        {
+            perror("[~] Server : ");
+        }
+        else if (pid == 0)
         {
             app_work(cnt_sck);
             exit(0);
@@ -76,5 +81,6 @@ void app_work(int client)
         free(req.params[i][1]);
     }
     free(req.params);
+
     return;
 }
